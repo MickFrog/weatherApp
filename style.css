@@ -2,7 +2,7 @@
 
 :root {
     --myFont: 'Quicksand', sans-serif;
-    --textSize: 1.4rem;
+    --footerSize: 1.2rem;
 }
 
 * {
@@ -17,13 +17,10 @@ body {
 
     background-image: url(./images/clear.svg);
     background-size: cover;
+    background-repeat: no-repeat;
 
+    color: white;
     font-family: var(--myFont);
-    font-size: var(--textSize);
-}
-
-a {
-    text-decoration-color: beige;
 }
 
 .header {
@@ -35,8 +32,17 @@ a {
 }
 
 .footer {
-    height: 5vh;
+    padding: 5px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-flow: row wrap;
+    place-content: center;
+    font-size: var(--footerSize);
+
+    background: rgba(181, 226, 250, 0.3); 
+    backdrop-filter: blur(8px); 
+}
+
+.footer > a {
+    color: inherit;
+    text-decoration-color: inherit;
 }
