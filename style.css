@@ -2,18 +2,21 @@
 
 :root {
     --myFont: 'Quicksand', sans-serif;
+    --headerSize: 2.4rem;
+    --textSize: 1rem;
     --footerSize: 1.2rem;
 }
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    
 }
 
 body {
     display: flex;
     flex-flow: column;
     min-height: 100vh;
-    margin: 0px;
 
     background-image: url(./images/clear.svg);
     background-size: cover;
@@ -21,21 +24,76 @@ body {
 
     color: white;
     font-family: var(--myFont);
+    font-size: var(--textSize);
 }
 
+/* Header Styles */
 .header {
-    height: 10vh;
+    padding: 1rem;
+    font-size: var(--headerSize);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(60, 122, 137, 0.3); 
+    backdrop-filter: blur(8px); 
+}
+
+.header > p {
+    text-align: center;
+}
+
+#searchForm {
+    display: flex;
+    align-items: center;
+
+    padding-top: 10px;
+    gap: 10px;
+}
+
+#searchTarget {
+    width: max(400px, 30vw);
+    height: 2.5rem;
+
+    border-radius: 5px;
+    border: none;
+
+    font-family: inherit;
+    font-size: 24px;
+    text-align: center;
+
+    background-color: #ccc;
+}
+
+#searchTarget:focus {
+    background-color: #9FA2B2;
+    outline: none;
+}
+
+#searchPlaceButton {
+    height: fit-content;
+    border: 0px;
+    background-color: #1D70A2;
+    border-radius: 5px;
+}
+
+#searchPlaceButton:hover{
+    background-color: #6761A8;
 }
 
 .content {
     flex: 1 0 auto;
 }
 
+
+/* Footer Styles */
 .footer {
     padding: 5px;
     display: flex;
     flex-flow: row wrap;
-    place-content: center;
+    justify-content: center;
     font-size: var(--footerSize);
 
     background: rgba(181, 226, 250, 0.3); 
