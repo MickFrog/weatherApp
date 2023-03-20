@@ -17,6 +17,7 @@ body {
     display: flex;
     flex-flow: column;
     min-height: 100vh;
+    min-width: fit-content;
 
     background-image: url(./images/clear.svg);
     background-size: cover;
@@ -83,6 +84,7 @@ body {
     background-color: #6761A8;
 }
 
+/* Content Styles */
 .content {
     flex: 1 0 auto;
 }
