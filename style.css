@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root {
+    --myFont: 'Quicksand', sans-serif;
+    --textSize: 1.4rem;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -7,8 +14,16 @@ body {
     flex-flow: column;
     min-height: 100vh;
     margin: 0px;
+
     background-image: url(./images/clear.svg);
     background-size: cover;
+
+    font-family: var(--myFont);
+    font-size: var(--textSize);
+}
+
+a {
+    text-decoration-color: beige;
 }
 
 .header {
@@ -21,4 +36,7 @@ body {
 
 .footer {
     height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
