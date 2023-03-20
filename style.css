@@ -87,6 +87,21 @@ body {
 /* Content Styles */
 .content {
     flex: 1 0 auto;
+    height: 100%;
+    padding: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weatherStats {
+    display: grid;
+    height: 60vh;
+    width: max(600px, 50vw);
+
+    border-radius: 10px;
+    backdrop-filter: invert(25%); 
 }
 
 
