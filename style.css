@@ -124,6 +124,7 @@ body {
 #weatherCondition {
     margin-top: 1rem;
     font-size: var(--headerSize);
+    text-align: center;
 }
 
 #temp {
