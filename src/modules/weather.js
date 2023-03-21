@@ -1,5 +1,5 @@
 async function getWeatherData(city) {
-    try {
+    try { //make API call and return response Object
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3cdd9a839ee1a7573b2f830649b4f7af&units=metric`);
         if (!response.ok) throw new Error(`No city named ${city}.`);
 
@@ -12,6 +12,7 @@ async function getWeatherData(city) {
 }
 
 async function processData(dataObj) {
+    if (dataObj == null) return; //prevent unrecognised locations
 
     let location = dataObj.name + ", " + dataObj.sys.country;
     let mainWeather = dataObj.weather[0].main;
