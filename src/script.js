@@ -13,3 +13,10 @@ searchForm.addEventListener('submit', async (event) => {
 
     searchForm.reset();
 })
+
+function initPage() {
+    searchBar.value = 'London';
+    searchForm.dispatchEvent(new Event('submit'));
+}
+
+initPage();
