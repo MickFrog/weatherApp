@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root {
+    --myFont: 'Quicksand', sans-serif;
+    --headerSize: 2.2rem;
+    --citySize: 3rem;
+    --textSize: 1.2rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    min-width: fit-content;
+
+    background-image: url(./images/weatherBg/clear.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    color: #E4FDE1;
+    font-family: var(--myFont);
+    font-size: var(--textSize);
+}
+
+/* Header Styles */
+.header {
+    padding: 1rem;
+    font-size: var(--headerSize);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(60, 122, 137, 0.3); 
+    backdrop-filter: blur(8px); 
+}
+
+.header > p {
+    text-align: center;
+}
+
+#searchForm {
+    display: flex;
+    align-items: center;
+
+    padding-top: 10px;
+    gap: 10px;
+}
+
+#searchTarget {
+    width: max(400px, 30vw);
+    height: 2.5rem;
+
+    border-radius: 5px;
+    border: none;
+
+    font-family: inherit;
+    font-size: 24px;
+    text-align: center;
+
+    background-color: #ccc;
+}
+
+#searchTarget:focus {
+    background-color: #9FA2B2;
+    outline: none;
+}
+
+#searchPlaceButton {
+    border: 0px;
+    background-color: #1D70A2;
+    border-radius: 5px;
+}
+
+#searchPlaceButton:hover{
+    background-color: #6761A8;
+}
+
+/* Content Styles */
+.content {
+    flex: 1 0 auto;
+    padding: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weatherStats {
+    height: 60vh;
+    width: max(600px, 50vw);
+    font-size: 1.6rem;
+
+    display: grid;
+    grid-template: 1fr 3fr 0.5fr / 1fr 1fr;
+
+    border-radius: 10px;
+    backdrop-filter: invert(15%); 
+}
+
+.city {
+    grid-column: 1 / 3;
+    font-size: var(--citySize);
+
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.cityWeather {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    border-right: 2px solid #1D3557;
+}
+
+#weatherCondition {
+    margin-top: 1rem;
+    font-size: var(--headerSize);
+    text-align: center;
+}
+
+#temp {
+    flex: 1 0 auto;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+}
+
+.otherStats {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.otherStats > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 2rem;
+}
+
+.source {
+    grid-column: 1 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--textSize);
+}
+
+/* Footer Styles */
+.footer {
+    padding: 5px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    font-size: var(--textSize);
+
+    background: rgba(181, 226, 250, 0.3); 
+    backdrop-filter: blur(8px); 
+}
+
+.footer > a {
+    color: inherit;
+    text-decoration-color: inherit;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <script src="./main.js" defer></script>
+        <title>Weather App</title>
+    </head>
+    <body>
+        <div class="header">
+            <p>What place are you looking to find its weather?</p>
+            <form id="searchForm">
+                <input type="text" id="searchTarget" placeholder="Search Place">
+                <button type="submit" id="searchPlaceButton">
+                    <img id="searchIcon" src="./images/icons/search.svg" alt="SearchIcon">
+                </button>
+            </form>
+        </div>
+
+        <div class="content">
+            <div class="weatherStats">
+                <div class="city">Kampala, UG</div>
+                
+                <div class="cityWeather">
+                    <p id="weatherCondition">Sunny</p>
+                    <div id="temp">30&deg;C</div>
+                </div>
+
+                <div class="otherStats">
+                    <div>
+                        <img src="./images/icons/therm.svg" alt="Thermometer">
+                        Feels Like: 28&deg;C    
+                    </div>
+
+                    <div>
+                        <img src="./images/icons/wind.svg" alt="Wind">
+                        Wind: 4 kph 
+                    </div>
+
+                    <div>
+                        <img src="./images/icons/humidity.svg" alt="humidity">
+                        Humidty: 78%
+                    </div>
+                </div>
+
+                <div class="source">Source: OpenWeatherAPI</div>
+                
+            </div>
+        </div>
+
+        <div class="footer">
+            Attempted to be made with skill by &nbsp;<a href="https://www.github.com/MickFrog/weatherApp" target="_blank">
+                &nbsp;MickFrog&nbsp;</a>&nbsp; with The Odin Project
+        </div>
+    </body>
+</html>
