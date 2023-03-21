@@ -5,6 +5,9 @@ const temperature = document.getElementById('temp');
 const feel = document.getElementById('feels');
 const wind = document.getElementById('wind');
 const humidity = document.getElementById('humid');
+const bodyElement = document.body;
+
+let prevWeather = '';
 
 function capitalize(myStr) {
     const words = myStr.split(" ");
@@ -32,9 +35,41 @@ function displayOtherStats(feelInt, windInt, humidInt) {
     humidity.textContent = humidInt + '%';
 }
 
+function bgStyles(bg) {
+    bodyElement.style.backgroundImage = `url(./images/weatherBg/${bg}.svg)`;
+}
+
+function changeBg(currWeather) {
+    if (prevWeather == currWeather) return; //prevent changing bg to similar bg
+    prevWeather = currWeather;
+
+    switch (currWeather) {
+        case 'Clear':
+            bgStyles('clear');
+            break;
+        case 'Rain':
+            bgStyles('rainy');
+            break;
+        case 'Clouds':
+            bgStyles('Cloudy');
+            break;
+        case 'Snow':
+            bgStyles('snow');
+            break;
+        case 'Sunny':
+            bgStyles('sunny');
+            break;
+        default:
+            bgStyles('clear');
+            break;
+    }
+}
+
 export default function displayWeather(myWeatherObj) {
     if (myWeatherObj == null) return; //prevent trying display of invalid locations
     displayLocation(myWeatherObj.location);
     displayMainWeather(myWeatherObj.weatherDesc, myWeatherObj.cityTemp);
     displayOtherStats(myWeatherObj.tempFeel, myWeatherObj.windSpeed, myWeatherObj.humidity);
+
+    changeBg(myWeatherObj.mainWeather);
 }
