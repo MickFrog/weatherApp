@@ -10,6 +10,16 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/modules/domBusiness.js":
+/*!************************************!*\
+  !*** ./src/modules/domBusiness.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ displayWeather)\n/* harmony export */ });\n//get elements\nconst location = document.querySelector('.city');\nconst weatherCondition = document.getElementById('weatherCondition');\nconst temperature = document.getElementById('temp');\nconst feel = document.getElementById('feels');\nconst wind = document.getElementById('wind');\nconst humidity = document.getElementById('humid');\n\nfunction capitalize(myStr) {\n    const words = myStr.split(\" \");\n\n    for (let i = 0; i < words.length; i++) {\n        words[i] = words[i][0].toUpperCase() + words[i].substr(1);\n    }\n\n    return words.join(\" \");\n}\n\nfunction displayLocation(locationStr) {\n    location.textContent = locationStr;\n}\n\nfunction displayMainWeather(desc, tempInt) {\n    desc = capitalize(desc);\n    weatherCondition.textContent = desc;\n    temperature.innerHTML = tempInt + '\\u2103';\n}\n\nfunction displayOtherStats(feelInt, windInt, humidInt) {\n    feel.textContent = feelInt + '\\u2103';\n    wind.textContent = windInt + ' m/s';\n    humidity.textContent = humidInt + '%';\n}\n\nfunction displayWeather(myWeatherObj) {\n    if (myWeatherObj == null) return; //prevent trying display of invalid locations\n    displayLocation(myWeatherObj.location);\n    displayMainWeather(myWeatherObj.weatherDesc, myWeatherObj.cityTemp);\n    displayOtherStats(myWeatherObj.tempFeel, myWeatherObj.windSpeed, myWeatherObj.humidity);\n}\n\n//# sourceURL=webpack://weatherapp/./src/modules/domBusiness.js?");
+
+/***/ }),
+
 /***/ "./src/modules/weather.js":
 /*!********************************!*\
   !*** ./src/modules/weather.js ***!
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/weather */ \"./src/modules/weather.js\");\n\n\nconst searchBar = document.getElementById('searchTarget');\nconst searchForm = document.getElementById('searchForm');\n\nsearchForm.addEventListener('submit', (event) => {\n    event.preventDefault();\n    console.log(searchBar.value);\n\n    searchForm.reset();\n})\n\n\n//# sourceURL=webpack://weatherapp/./src/script.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/weather */ \"./src/modules/weather.js\");\n/* harmony import */ var _modules_domBusiness__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/domBusiness */ \"./src/modules/domBusiness.js\");\n\n\n\nconst searchBar = document.getElementById('searchTarget');\nconst searchForm = document.getElementById('searchForm');\n\nsearchForm.addEventListener('submit', async (event) => {\n    event.preventDefault();\n    if (searchBar.value == \"\") return;\n\n    let weatherObj = await (0,_modules_weather__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(searchBar.value);\n    (0,_modules_domBusiness__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(weatherObj);\n\n    searchForm.reset();\n})\n\n\n//# sourceURL=webpack://weatherapp/./src/script.js?");
 
 /***/ })
 
