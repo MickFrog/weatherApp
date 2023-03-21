@@ -18,7 +18,7 @@ body {
     min-height: 100vh;
     min-width: fit-content;
 
-    background-image: url(./images/clear.svg);
+    background-image: url(./images/weatherBg/clear.svg);
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -144,6 +144,7 @@ body {
 .otherStats > div {
     display: flex;
     align-items: center;
+    gap: 1rem;
     margin-left: 2rem;
 }
 
